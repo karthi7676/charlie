@@ -51,9 +51,10 @@ h1 {
 <body>
 
 <!-- Background Music -->
-<audio autoplay loop>
-  <source src="music.mpeg" type="audio/mpeg">
+<audio id="bgmusic" loop>
+  <source src="music.mp3.mpeg" type="audio/mpeg">
 </audio>
+
 
 <div class="content">
 
@@ -98,6 +99,12 @@ function createHeart() {
 }
 
 setInterval(createHeart, 300);
+  document.body.addEventListener("click", function() {
+  var music = document.getElementById("bgmusic");
+  if (music && music.paused) {
+    music.play();
+  }
+});
 </script>
 
 </body>
